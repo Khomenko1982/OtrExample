@@ -16,5 +16,7 @@ public class IpRange {
         System.out.println();
 //        int[] ip1 = {192, 168, 0, 1};
 //        int[] ip2 = {192, 168, 0, 10};
+        Scanner: input.close();
+
     }
 }
