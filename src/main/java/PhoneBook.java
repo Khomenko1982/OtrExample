@@ -15,7 +15,8 @@
 //1. +8 800 2000 500
 //        2. +8 800 200 600
 //
-//Обязательно. Использовать для реализации HashMap (для хранения сопоставления ФИО -> телефоны), ArrayList для хранения списка телефонов
+//Обязательно. Использовать для реализации HashMap (для хранения сопоставления ФИО -> телефоны),
+// ArrayList для хранения списка телефонов
 //
 //Желательно (опционально):
 //        - использовать для сборки maven3 https://maven.apache.org/
@@ -25,11 +26,26 @@
 //б. заливать промежуточные результаты, чтобы мы оценили прогресс задачи.
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 
 public class PhoneBook
 {
     public static void main(String[] args) {
         HashMap<String, Integer> phoneAndName = new HashMap<>();
+
+        phoneAndName.put("Хоменко А.С.", 89246666666);
+        phoneAndName.put("Иванов И.И.",89245555555);
+        phoneAndName.put("Сидоров П.В.",89247777777);
+//        System.out.println(phoneAndName);
+
+        ArrayList<String> values = new ArrayList<>(phoneAndName.values());
+        System.out.println("ФИО: " + values);
+
+        Set<Integer> keys = phoneAndName.keySet();
+        System.out.println("Тел.: " + keys);
+
+
     }
 }
