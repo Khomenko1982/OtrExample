@@ -28,23 +28,54 @@
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 import java.util.Set;
 
 public class PhoneBook
 {
     public static void main(String[] args) {
-        HashMap<String, Integer> phoneAndName = new HashMap<>();
+        Scanner input = new Scanner(System.in).useDelimiter("[\\s.;]+");
+        HashMap<String, Long> phoneAndName = new HashMap<>();
+//         String keyName;
+//        HashMap<Integer, String> phoneAndName1 = new HashMap<>();
 
-        phoneAndName.put("Хоменко А.С.", 89246666666);
-        phoneAndName.put("Иванов И.И.",89245555555);
-        phoneAndName.put("Сидоров П.В.",89247777777);
+        phoneAndName.put("Хоменко А.С.", 79246666666L);
+        phoneAndName.put("Иванов И.И.", 79245555555L);
+        phoneAndName.put("Сидоров П.В.", 79247777777L);
+
+        System.out.println("Введите ФИО:");
+        String keyName = input.nextLine();
+//        System.out.print (keyName);
+        input.close();
+//        phoneAndName1.put(1, "79246666666");
+//        phoneAndName1.put(2, "79245555555");
+//        phoneAndName1.put(3, "79247777777");
 //        System.out.println(phoneAndName);
 
-        ArrayList<String> values = new ArrayList<>(phoneAndName.values());
-        System.out.println("ФИО: " + values);
+//        Set<String> keys = phoneAndName.keySet();
+        phoneAndName.containsKey(keyName);
+        if (phoneAndName.containsKey(keyName) ==false) {
+            System.out.println("Нет такого ФИО");
+            System.exit(0);
+        }
+//        for (phoneAndName.Entry<String, Long> entry : phoneAndName.entrySet()) {
+//            if (entry.getKey().equals(keyName)) {
+//                keyName = entry.getKey();
+//                break;
+//            }
+//        }
+        ArrayList<String> keys = new ArrayList<>(phoneAndName.keySet());
+//        System.out.println("ФИО: " + keyName);
+        System.out.println("ФИО: " + keys);
+        ArrayList<Long> values = new ArrayList<>(phoneAndName.values());
+//            for(Long s : values) {
+//                if (phoneAndName.keySet() == keyName) {
+//                System.out.println(s);
+//                    System.exit(0);
+//            }
+        System.out.println("Тел: " + values);
 
-        Set<Integer> keys = phoneAndName.keySet();
-        System.out.println("Тел.: " + keys);
+
 
 
     }
