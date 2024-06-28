@@ -5,19 +5,20 @@ import java.io.*;
 
 public class IpRange {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in).useDelimiter("[\\s.;]+");;
+        Scanner input = new Scanner(System.in).useDelimiter("[\\s.;]+");
+        ;
 
         int sizeIn = 4;
         int sizeOut = 4;
         int array[] = new int[sizeIn];
         int array1[] = new int[sizeOut];
         System.out.println("Введите начальный ip диапазона:");
-            for (int i = 0; i < sizeIn; i++) {
+        for (int i = 0; i < sizeIn; i++) {
             array[i] = input.nextInt();
         }
-        System.out.print ("Начальный ip диапазона:");
+        System.out.print("Начальный ip диапазона:");
         for (int i = 0; i < sizeIn; i++) {
-            System.out.print ("." + array[i]);
+            System.out.print("." + array[i]);
         }
         System.out.println();
 
@@ -25,25 +26,26 @@ public class IpRange {
         for (int i = 0; i < sizeOut; i++) {
             array1[i] = input.nextInt();
         }
-        System.out.print ("Конечный ip диапазона:");
+        System.out.print("Конечный ip диапазона:");
         for (int i = 0; i < sizeOut; i++) {
-            System.out.print ("." + array1[i]);
+            System.out.print("." + array1[i]);
 
         }
         System.out.println();
         boolean result = Arrays.equals(array, array1);
 //        System.out.println(array.getClass().getName());
 //        System.out.println(array1.getClass().getName());
-        if (result == true){
-        System.out.print ("IP одинаковы,диапазон пуст");
-        System.exit(0);}
-        int firstD = array[sizeIn-1 ];
-        int lastD = array1[sizeOut-1 ];
-        int nonLastD = firstD+1;
+        if (result == true) {
+            System.out.print("IP одинаковы,диапазон пуст");
+            System.exit(0);
+        }
+        int firstD = array[sizeIn - 1];
+        int lastD = array1[sizeOut - 1];
+        int nonLastD = firstD + 1;
         System.out.println(firstD);
         System.out.println(lastD);
-        for (int i = 0; i < lastD-2; i++) {
-            System.out.println (array[0] + "." + array[1]+ "." + array[2] + "." + nonLastD++);
+        for (int i = 0; i < lastD - 2; i++) {
+            System.out.println(array[0] + "." + array[1] + "." + array[2] + "." + nonLastD++);
 
         }
 
@@ -69,7 +71,6 @@ public class IpRange {
 //        System.out.print(Arrays.toString(array1).replace("[","").replace("]","").replace(",", "."));
 
 
-
         //        Arrays.toString(array_name).replace("[",""").replace("]",""").replace(", "",""");
 //                System.out.println(result); // => true
 //        int Element = sizeIn[i];
@@ -92,7 +93,8 @@ public class IpRange {
 //        int result = Arrays.mismatch(sizeIn, sizeOut);
 //        System.out.println(result); // => 1
 
-        Scanner: input.close();
+        Scanner:
+        input.close();
 
     }
 }

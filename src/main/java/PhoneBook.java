@@ -26,22 +26,28 @@
 //б. заливать промежуточные результаты, чтобы мы оценили прогресс задачи.
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class PhoneBook
 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in).useDelimiter("[\\s.;]+");
         HashMap<String, Long> phoneAndName = new HashMap<>();
-//         String keyName;
-//        HashMap<Integer, String> phoneAndName1 = new HashMap<>();
 
-        phoneAndName.put("Хоменко А.С.", 79246666666L);
-        phoneAndName.put("Иванов И.И.", 79245555555L);
-        phoneAndName.put("Сидоров П.В.", 79247777777L);
+        Map<String, List<Long>> phoneAndName1 = new HashMap<String, List<Long>>();
+        List<Long> values = new ArrayList<Long>();
+        values.add(79246666666L);
+        values.add(79249999999L);
+        phoneAndName1.put("Петров П.П.", values);
+
+        List<Long> values1 = new ArrayList<Long>();
+        values1.add(7924000000L);
+        values1.add(7924111111L);
+        phoneAndName1.put("Сидоров С.С.", values1);
+
+//        phoneAndName.put("Хоменко А.С.", 79246666666L);
+//        phoneAndName.put("Иванов И.И.", 79245555555L);
+//        phoneAndName.put("Сидоров П.В.", 79247777777L);
 
         System.out.println("Введите ФИО:");
         String keyName = input.nextLine();
@@ -52,11 +58,26 @@ public class PhoneBook
 //        phoneAndName1.put(3, "79247777777");
 //        System.out.println(phoneAndName);
 
-//        Set<String> keys = phoneAndName.keySet();
-        phoneAndName.containsKey(keyName);
-        if (phoneAndName.containsKey(keyName) ==false) {
+        phoneAndName1.containsKey(keyName);
+        if (phoneAndName1.containsKey(keyName) ==false) {
             System.out.println("Нет такого ФИО");
             System.exit(0);
+        }
+        else {
+            List<Long> l = phoneAndName1.get(keyName);
+//            Long l = phoneAndName.containsKey(keyName);
+            System.out.print(" Тел: " + l);
+        }
+//        Set<String> keys = phoneAndName.keySet();
+//        phoneAndName.containsKey(keyName);
+//        if (phoneAndName.containsKey(keyName) ==false) {
+//            System.out.println("Нет такого ФИО");
+//            System.exit(0);
+//        }
+//        else {
+//            Long  l = phoneAndName.get(keyName);
+////            Long l = phoneAndName.containsKey(keyName);
+//            System.out.print(" Тел: " + l);
         }
 //        for (phoneAndName.Entry<String, Long> entry : phoneAndName.entrySet()) {
 //            if (entry.getKey().equals(keyName)) {
@@ -64,19 +85,19 @@ public class PhoneBook
 //                break;
 //            }
 //        }
-        ArrayList<String> keys = new ArrayList<>(phoneAndName.keySet());
-//        System.out.println("ФИО: " + keyName);
-        System.out.println("ФИО: " + keys);
-        ArrayList<Long> values = new ArrayList<>(phoneAndName.values());
-//            for(Long s : values) {
-//                if (phoneAndName.keySet() == keyName) {
-//                System.out.println(s);
-//                    System.exit(0);
-//            }
-        System.out.println("Тел: " + values);
+//        ArrayList<String> keys = new ArrayList<>(phoneAndName.keySet());
+////        System.out.println("ФИО: " + keyName);
+//        System.out.println("ФИО: " + keys);
+//        ArrayList<Long> values = new ArrayList<>(phoneAndName.values());
+////            for(Long s : values) {
+////                if (phoneAndName.keySet() == keyName) {
+////                System.out.println(s);
+////                    System.exit(0);
+////            }
+//        System.out.println("Тел: " + values);
 
 
 
 
-    }
+//    }
 }
