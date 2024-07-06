@@ -28,11 +28,10 @@
 
 import java.util.*;
 
-public class PhoneBook
-{
+public class PhoneBook {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in).useDelimiter("[\\s.;]+");
-        HashMap<String, Long> phoneAndName = new HashMap<>();
+//        HashMap<String, Long> phoneAndName = new HashMap<>();
 
         Map<String, List<Long>> phoneAndName1 = new HashMap<String, List<Long>>();
         List<Long> values = new ArrayList<Long>();
@@ -45,59 +44,24 @@ public class PhoneBook
         values1.add(7924111111L);
         phoneAndName1.put("Сидоров С.С.", values1);
 
-//        phoneAndName.put("Хоменко А.С.", 79246666666L);
-//        phoneAndName.put("Иванов И.И.", 79245555555L);
-//        phoneAndName.put("Сидоров П.В.", 79247777777L);
+        List<Long> values2 = new ArrayList<Long>();
+        values2.add(7924666666L);
+        values2.add(7924777777L);
+        phoneAndName1.put("Иванов И.И.", values2);
 
         System.out.println("Введите ФИО:");
         String keyName = input.nextLine();
-//        System.out.print (keyName);
         input.close();
-//        phoneAndName1.put(1, "79246666666");
-//        phoneAndName1.put(2, "79245555555");
-//        phoneAndName1.put(3, "79247777777");
-//        System.out.println(phoneAndName);
 
         phoneAndName1.containsKey(keyName);
-        if (phoneAndName1.containsKey(keyName) ==false) {
+        if ( phoneAndName1.containsKey(keyName) ) {
+            List<Long> l = phoneAndName1.get(keyName);
+            System.out.print(" Тел: ");
+            l.forEach( System.out::println);
+        } else {
             System.out.println("Нет такого ФИО");
             System.exit(0);
         }
-        else {
-            List<Long> l = phoneAndName1.get(keyName);
-//            Long l = phoneAndName.containsKey(keyName);
-            System.out.print(" Тел: " + l);
-        }
-//        Set<String> keys = phoneAndName.keySet();
-//        phoneAndName.containsKey(keyName);
-//        if (phoneAndName.containsKey(keyName) ==false) {
-//            System.out.println("Нет такого ФИО");
-//            System.exit(0);
-//        }
-//        else {
-//            Long  l = phoneAndName.get(keyName);
-////            Long l = phoneAndName.containsKey(keyName);
-//            System.out.print(" Тел: " + l);
-        }
-//        for (phoneAndName.Entry<String, Long> entry : phoneAndName.entrySet()) {
-//            if (entry.getKey().equals(keyName)) {
-//                keyName = entry.getKey();
-//                break;
-//            }
-//        }
-//        ArrayList<String> keys = new ArrayList<>(phoneAndName.keySet());
-////        System.out.println("ФИО: " + keyName);
-//        System.out.println("ФИО: " + keys);
-//        ArrayList<Long> values = new ArrayList<>(phoneAndName.values());
-////            for(Long s : values) {
-////                if (phoneAndName.keySet() == keyName) {
-////                System.out.println(s);
-////                    System.exit(0);
-////            }
-//        System.out.println("Тел: " + values);
+    }
 
-
-
-
-//    }
 }
