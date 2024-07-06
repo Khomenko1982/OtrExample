@@ -31,7 +31,7 @@ import java.util.*;
 public class PhoneBook {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in).useDelimiter("[\\s.;]+");
-//        HashMap<String, Long> phoneAndName = new HashMap<>();
+
 
         Map<String, List<Long>> phoneAndName1 = new HashMap<String, List<Long>>();
         List<Long> values = new ArrayList<Long>();
